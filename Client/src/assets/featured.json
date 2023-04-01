@@ -1,0 +1,31 @@
+[
+  {
+    "img": "https://images.pexels.com/photos/169647/pexels-photo-169647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "title": "China Town",
+    "description": "25 Apartments"
+  },
+
+  {
+    "img": "https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "title": "London",
+    "description": "52 Apartments"
+  },
+
+  {
+    "img": "https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "title": "New York",
+    "description": "11 Apartments"
+  },
+
+  {
+    "img": "https://images.pexels.com/photos/699466/pexels-photo-699466.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "title": "Paris",
+    "description": "90 Apartments"
+  },
+
+  {
+    "img": "https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "title": "Barcelona",
+    "description": "66 Apartments"
+  }
+]
