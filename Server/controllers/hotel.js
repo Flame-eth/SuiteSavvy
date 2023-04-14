@@ -46,6 +46,42 @@ export const getHotels = async (req, res, next) => {
     const hotels = await Hotel.find();
     res.status(200).json(hotels);
   } catch (error) {
-    res.status(500).json(error);
+    next(error);
   }
+};
+
+export const countByCity = async (req, res, next) => {
+  const cities = req.query.cities.split(",");
+  try {
+    const list = await Promise.all(
+      cities.map(async (city) => {
+        return await Hotel.countDocuments({ city: city });
+      })
+    );
+    res.status(200).json(list);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const countByType = async (req, res, next) => {
+  try {
+    const hotelCount = await Hotel.countDocuments({ type: "hotel" });
+    const resortCount = await Hotel.countDocuments({ type: "resort" });
+    const apartmentCount = await Hotel.countDocuments({ type: "apartment" });
+    const villaCount = await Hotel.countDocuments({ type: "villa" });
+    const cabinCount = await Hotel.countDocuments({ type: "cabin" });
+    const glampingCount = await Hotel.countDocuments({ type: "glamping" });
+    const ryokanCount = await Hotel.countDocuments({ type: "ryokan" });
+
+    res.status(200).json([
+      { type: "hotel", count: hotelCount },
+      { type: "resort", count: resortCount },
+      { type: "apartment", count: apartmentCount },
+      { type: "villa", count: villaCount },
+      { type: "cabin", count: cabinCount },
+      { type: "glamping", count: glampingCount },
+      { type: "ryokan", count: ryokanCount },
+    ]);
+  } catch (error) {}
 };

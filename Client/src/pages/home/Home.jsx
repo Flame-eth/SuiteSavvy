@@ -15,7 +15,7 @@ const Home = () => {
       <Navbar />
       <Header />
       <div className="homeContainer">
-        <Featured data={featured} />
+        <Featured db={featured} />
         <h1 className="homeTitle">Browse by property type</h1>
         <div>
           <Carousel />

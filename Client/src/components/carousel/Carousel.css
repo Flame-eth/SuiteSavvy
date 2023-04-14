@@ -50,3 +50,21 @@
 .carousel-button-next {
   right: 0;
 }
+
+.pListTitles h1 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 1rem;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.pListTitles h2 {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #000;
+  margin-bottom: 1rem;
+  padding: 0;
+  margin: 0;
+}
