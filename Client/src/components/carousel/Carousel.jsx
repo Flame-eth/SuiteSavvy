@@ -4,11 +4,12 @@ import { properties } from "../../assets/property";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { BsArrowRightCircle, BsArrowLeftCircle } from "react-icons/bs";
+import { BiLoaderCircle } from "react-icons/bi";
 import useFetch from "../../hooks/useFetch";
 
 const Carousel = () => {
   const { data, isPending, error } = useFetch("hotels/countByType");
-  console.log(data);
+  // console.log(data);
   const [scrollX, setScrollX] = useState(0);
   const refCarousel = useRef(null);
 
@@ -30,7 +31,12 @@ const Carousel = () => {
     <div>
       {isPending ? (
         <div className="loading">
-          <h1>Loading...</h1>
+          {/* <h1>Loading...</h1> */}
+          <BiLoaderCircle
+            className="loadingIcon"
+            size={"50px"}
+            color="#003580"
+          />
         </div>
       ) : (
         <>

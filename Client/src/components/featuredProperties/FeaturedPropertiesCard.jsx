@@ -28,7 +28,6 @@ const FeaturedPropertiesCard = (data) => {
           <span className="fpPrice"> Starting from ${item.price} </span>
           <div className="fpRating">
             <button>{item.rating} Rating </button>
-            {/* <span>{Rating}</span> */}
           </div>
         </div>
       ))}
