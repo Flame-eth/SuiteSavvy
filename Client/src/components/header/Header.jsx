@@ -113,7 +113,7 @@ const Header = ({ type }) => {
             </h1>
             <p className="headerDesc">
               Get rewarded for your travels- unlock instant savings of 10% or
-              more with a free Lamabooking acccount
+              more with a free Suite Savvy acccount
             </p>
             {!user && (
               <button className="headerBtn"> Sign In / Register </button>
