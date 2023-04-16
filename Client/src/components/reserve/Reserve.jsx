@@ -56,7 +56,7 @@ const Reserve = ({ setOpen, hotelId }) => {
 
   const allDates = getDatesInRange(dates[0].startDate, dates[0].endDate);
 
-  const isAvialable = (roomNumber) => {
+  const isAvailable = (roomNumber) => {
     // const reserved = roomNumber.reserved;
     // const isAvailable = allDates.every((date) => !reserved.includes(date));
     // return isAvailable;
@@ -69,13 +69,18 @@ const Reserve = ({ setOpen, hotelId }) => {
 
   const handleClick = async () => {
     try {
-        await Promise.all(selectedRoom.map((roomId) => {
-        const res = axios.put("")
-    }) catch (error) {
-        
-    })
+      await Promise.all(
+        selectedRoom.map((roomId) => {
+          const res = axios.put(`/rooms/availability/${roomId}`, {
+            dates: allDates,
+          });
+          return res.data;
+        })
+      );
+    } catch (error) {
+      console.log(error);
+    }
   };
-}
 
   return (
     <div className="reserve">
@@ -105,7 +110,7 @@ const Reserve = ({ setOpen, hotelId }) => {
                   type="checkbox"
                   value={roomNumber.id}
                   onchange={handleChange}
-                  disabled={!isAvialable(roomNumber)}
+                  disabled={!isAvailable(roomNumber)}
                 />
               </div>
             ))}
