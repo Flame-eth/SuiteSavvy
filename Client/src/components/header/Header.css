@@ -126,3 +126,57 @@
 .optionCounterButton:disabled {
   cursor: not-allowed;
 }
+
+@media (max-width: 1024px) {
+  .headerContainer {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .headerList {
+    flex-direction: column;
+    gap: 20px;
+    display: none;
+  }
+
+  .headerDesc {
+    margin: 20px 0px;
+    font-weight: 200;
+  }
+
+  .headerTitle {
+    margin: 20px 10px;
+    margin-bottom: 5px;
+  }
+
+  .headerBtn {
+    margin: 20px 0px;
+  }
+
+  .headerSearch {
+    position: relative;
+    bottom: 0px;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .headerSearchItem {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .headerSearchInput {
+    width: 100%;
+  }
+
+  .date {
+    position: relative;
+    top: 0px;
+  }
+
+  .options {
+    position: relative;
+    top: 0px;
+  }
+}
