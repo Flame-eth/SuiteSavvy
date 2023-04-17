@@ -3,7 +3,6 @@ import "./login.css";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 import Navbar from "../../components/navbar/Navbar";
-import Header from "../../components/header/Header";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -30,18 +29,8 @@ const Login = () => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      //   const res = await fetch(" /auth/login", {
-      //     method: "POST",
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //     body: JSON.stringify(credentials),
-      //   });
-      //   const data = await res.json();
-      //   dispatch({ type: "LOGIN_SUCCESS", payload: data });
-
       const res = await axios.post("/auth/login", credentials);
-      dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
+      dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
       navigate("/");
     } catch (error) {
       dispatch({ type: "LOGIN_FAILURE", payload: error });

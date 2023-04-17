@@ -19,8 +19,7 @@ export const register = async (req, res, next) => {
   // Create new user
   try {
     const newUser = new User({
-      username: req.body.username,
-      email: req.body.email,
+      ...req.body,
       password: hashedPassword,
     });
     await newUser.save();
@@ -62,7 +61,7 @@ export const login = async (req, res, next) => {
         httpOnly: true,
       })
       .status(200)
-      .json(others);
+      .json({ details: { ...others }, isAdmin });
   } catch (err) {
     next(err);
   }
