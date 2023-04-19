@@ -56,6 +56,7 @@ const Register = () => {
       dispatch({ type: "REGISTER_SUCCESS", payload: res.data.details });
       navigate("/");
     } catch (err) {
+      console.log(err);
       dispatch({ type: "REGISTER_FAILURE", payload: err });
       setDisabled(false);
     }
