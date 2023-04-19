@@ -5,7 +5,7 @@ import { AuthContext } from "../../context/AuthContext";
 
 const Navbar = () => {
   const { user, dispatch } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
   const navigate = useNavigate();
 
   const handleSubmit = () => {
@@ -28,7 +28,9 @@ const Navbar = () => {
           </div>
         ) : (
           <div className="navItems">
-            <button className="navButton">Register</button>
+            <button className="navButton" onClick={() => navigate("/register")}>
+              Register
+            </button>
             <button className="navButton" onClick={() => navigate("/login")}>
               Login
             </button>

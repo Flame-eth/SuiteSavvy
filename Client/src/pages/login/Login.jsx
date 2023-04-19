@@ -68,6 +68,9 @@ const Login = () => {
             className="lButton">
             Login
           </button>
+          <span className="register">
+            Don't have an account? Register <a href="/register">here</a>
+          </span>
           {error && <span>{error.message}</span>}
         </div>
       </div>

@@ -82,3 +82,11 @@ button:focus {
   box-shadow: 0 0 5px rgba(0, 53, 128, 0.5);
   transition: box-shadow 0.3s ease;
 }
+
+.register a {
+  color: #003580;
+  text-decoration: none;
+  /* font-size: 14px; */
+  font-weight: bold;
+  transition: color 0.3s ease;
+}

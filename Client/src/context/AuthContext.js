@@ -34,6 +34,18 @@ const AuthReducer = (state, action) => {
         loading: false,
         error: null,
       };
+    case "REGISTER_SUCCESS":
+      return {
+        user: action.payload,
+        loading: false,
+        error: null,
+      };
+    case "REGISTER_FAILURE":
+      return {
+        user: null,
+        loading: false,
+        error: action.payload,
+      };
     default:
   }
 };
@@ -53,6 +65,7 @@ export const AuthContextProvider = ({ children }) => {
         error: state.error,
         login: (user) => dispatch({ type: "LOGIN_START" }),
         logout: () => dispatch({ type: "LOGOUT" }),
+        register: (user) => dispatch({ type: "REGISTER" }),
         dispatch,
       }}>
       {children}
