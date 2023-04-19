@@ -21,7 +21,7 @@ const Navbar = () => {
         </span>
         {user ? (
           <div className="navItems">
-            Welcome, {user.details.username}!
+            Welcome, {user.username}!
             <button className="navButton" onClick={handleSubmit}>
               Logout
             </button>

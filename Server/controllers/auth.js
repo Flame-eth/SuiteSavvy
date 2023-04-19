@@ -4,6 +4,7 @@ import { createError } from "../utils/error.js";
 import jwt from "jsonwebtoken";
 
 export const register = async (req, res, next) => {
+  console.log(req.body);
   // Check if user already exists
   const user = await User.findOne({ username: req.body.username });
   if (user) {
@@ -15,6 +16,8 @@ export const register = async (req, res, next) => {
   // Hash password
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(req.body.password, salt);
+
+  // console.log(salt, hashedPassword);
 
   // Create new user
   try {
