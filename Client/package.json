@@ -46,5 +46,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://suitesavvy-production.up.railway.app/api/"
+  "proxy": "https://suitesavvy-production.up.railway.app/api/"
 }

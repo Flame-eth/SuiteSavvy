@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const useFetch = (url) => {
-  console.log(url);
+  // console.log(url);
   const urlFetch = `${process.env.REACT_APP_API_URL}/api/${url}`;
+  console.log(urlFetch);
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
