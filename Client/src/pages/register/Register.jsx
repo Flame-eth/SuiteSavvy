@@ -27,32 +27,15 @@ const Register = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
-    setDisabled(true);
-    e.preventDefault();
-    dispatch({ type: "Register_START" });
-    try {
-      const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/auth/Register`,
-        credentials
-      );
-      dispatch({ type: "Register_SUCCESS", payload: res.data.details });
-      navigate("/");
-    } catch (error) {
-      dispatch({ type: "Register_FAILURE", payload: error });
-    }
-  };
-
   const [disabled, setDisabled] = useState(false);
 
   const handleClick = async () => {
     setDisabled(true);
     console.log(credentials);
+    const proxy = process.env.REACT_APP_API_URL;
+    console.log(proxy);
     try {
-      const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/auth/register`,
-        credentials
-      );
+      const res = await axios.post(`${proxy}/api/auth/register`, credentials);
       dispatch({ type: "REGISTER_SUCCESS", payload: res.data.details });
       navigate("/");
     } catch (err) {
@@ -61,10 +44,6 @@ const Register = () => {
       setDisabled(false);
     }
   };
-
-  //   function handleClick() {
-  //     setDisabled(true);
-  //   }
 
   return (
     <>

@@ -6,11 +6,20 @@ const useFetch = (url) => {
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
 
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+    },
+  };
+
+  const instance = axios.create(config);
+
   useEffect(() => {
     const fetchData = async () => {
       setIsPending(true);
       try {
-        const res = await axios.get(url);
+        const res = await instance.get(url);
         setData(res.data);
       } catch (err) {
         setError(err);
