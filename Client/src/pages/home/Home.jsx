@@ -17,9 +17,11 @@ const Home = () => {
       <div className="homeContainer">
         <Featured db={featured} />
         <h1 className="homeTitle">Browse by property type</h1>
-        <div>{/* <Carousel /> */}</div>
+        <div>
+          <Carousel />
+        </div>
         <h1 className="homeTitle">Homes guests loves</h1>
-        {/* <FeaturedProperties /> */}
+        <FeaturedProperties />
       </div>
       <MailList />
       <div className="homeContainer">
