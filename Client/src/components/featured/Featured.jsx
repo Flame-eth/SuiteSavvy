@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Featured.css";
 import useFetch from "../../hooks/useFetch";
 import { BiLoaderCircle } from "react-icons/bi";
+import axios from "axios";
 
 // const Featured = (data) => {
 const Featured = (db) => {
   const { data, isPending, error } = useFetch(
     "hotels/countByCity?cities=Barcelona,Madrid,Los Angeles"
   );
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const res = await axios.get(
+  //       `/hotels/countByCity?cities=Barcelona,Madrid,Los Angeles`
+  //     );
+  //     console.log(res.data);
+  //   };
+  //   fetchData();
+  // }, []);
 
   // console.log(db);
   const arr = db.db;

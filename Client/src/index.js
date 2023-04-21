@@ -5,7 +5,7 @@ import axios from "axios";
 import { SearchContextProvider } from "./context/SearchContext";
 import { AuthContextProvider } from "./context/AuthContext";
 
-axios.defaults.baseURL = "http://localhost:5000/api";
+axios.defaults.baseURL = "https://suitesavvy-production.up.railway.app/api";
 // Axios.defaults.baseURL = "http://localhost:5000/api";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

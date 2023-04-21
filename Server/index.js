@@ -33,7 +33,7 @@ const connectDB = async () => {
 
 // middleware
 const corsOptions = {
-  origin: "http://localhost:3000" && "https://suite-savvy.vercel.app/",
+  origin: "https://localhost:3000" && "https://suite-savvy.vercel.app/",
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
