@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const useFetch = (url) => {
+  console.log(url);
+  const urlFetch = `${process.env.REACT_APP_API_URL}/api/${url}`;
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
@@ -19,7 +21,7 @@ const useFetch = (url) => {
     const fetchData = async () => {
       setIsPending(true);
       try {
-        const res = await instance.get(url);
+        const res = await instance.get(urlFetch);
         setData(res.data);
       } catch (err) {
         setError(err);
@@ -32,7 +34,7 @@ const useFetch = (url) => {
   const reFetch = async () => {
     setIsPending(true);
     try {
-      const res = await axios.get(url);
+      const res = await axios.get(urlFetch);
       setData(res.data);
       return res.data;
     } catch (err) {

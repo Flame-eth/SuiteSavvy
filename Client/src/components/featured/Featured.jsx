@@ -6,7 +6,7 @@ import { BiLoaderCircle } from "react-icons/bi";
 // const Featured = (data) => {
 const Featured = (db) => {
   const { data, isPending, error } = useFetch(
-    "https://suitesavvy-production.up.railway.app/hotels/countByCity?cities=Barcelona,Madrid,Los Angeles"
+    "hotels/countByCity?cities=Barcelona,Madrid,Los Angeles"
   );
 
   // console.log(db);
